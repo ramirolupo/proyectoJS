@@ -7,7 +7,7 @@ let playaCentral = 0;
 
 let ingreso = parseInt(prompt("                                 ESTACIONAMIENTO RUPERTI\n\n Menu principal:\n\n1 - Estacionar playa izquierda.\n2 - Estacionar playa central.\n3 - Estacionar playa derecha.\n4 - Salir"));
 
-while (ingreso != 4 && ingreso != 2) {
+while (ingreso != 4) {
 
     switch (ingreso) {
         case 1: //Estacionar playa izquierda
