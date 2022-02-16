@@ -1,6 +1,6 @@
 //Definición de variables
 
-let playaIzq = 5;
+/*let playaIzq = 5;
 let playaDer = 2;
 let playaCentral = 0;
 
@@ -33,4 +33,17 @@ while (ingreso != 4) {
 
     ingreso = parseInt(prompt("                                 ESTACIONAMIENTO RUPERTI\n\n Menu principal:\n\n1 - Estacionar playa izquierda.\n2 - Estacionar playa central.\n3 - Estacionar playa derecha.\n4 - Salir"));
 
+}
+*/
+function validarMenu(mensaje) {
+
+    let validar = true;
+
+    do {
+        prompt(mensaje);
+        //if () {
+            
+        //}
+
+    } while (validar);
 }
