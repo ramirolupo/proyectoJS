@@ -1,42 +1,62 @@
-//Definición de variables
-
-let playaIzq = 5;
-let playaDer = 2;
-let playaCentral = 0;
+const planes = []
+const turnos = []
 
 
-let ingreso = parseInt(prompt("                                 ESTACIONAMIENTO RUPERTI\n\n Menu principal:\n\n1 - Estacionar playa izquierda.\n2 - Estacionar playa central.\n3 - Estacionar playa derecha.\n4 - Salir"));
+class PlanesDieta {
+    constructor(nombre, precio, img){
 
-while (ingreso != 4) {
+        this.name = nombre;
+        this.price = precio;
+        this.img = img;
+        this.plan = [];
 
-    switch (ingreso) {
-        case 1: //Estacionar playa izquierda
-            alert("Disculpa campeón pero está llena, elegí otra");
-            break;
-        
-        case 2: //Estacionar playa central
-            mensaje();
-            break;
+        this.addPlato = () => {
+            let plato = prompt("Ingrese el plato")
+            let k = prompt("Ingrese la calorias")
+            this.plan.push({namePlato: plato, calorias: k})
+        };
+        this.addPlatoSec = (plato, k) => {
+            
+            this.plan.push({namePlato: plato, calorias: k})
+        }
 
-        case 3: //Estacionar playa derecha
-            mensaje();
-            break;
+    }
+}
 
-        case 4: //Salir
-            mensaje();
-            break;
+// Crear una clase turnos (nombre, apellido, tipo de turno, dia, horario, mail, direccion  )
 
-        default:
-            alert("Te equivocaste de opción rey, probá de nuevo");
-            break;
-    } 
 
-    ingreso = parseInt(prompt("                                 ESTACIONAMIENTO RUPERTI\n\n Menu principal:\n\n1 - Estacionar playa izquierda.\n2 - Estacionar playa central.\n3 - Estacionar playa derecha.\n4 - Salir"));
+//globales 
+
+
+//resto del codigo
+planes.push(new PlanesDieta("Basica", 5000, "https://llevatilde.es/imagetexts/4/48/b%C3%A1sico.png"))
+planes.push(new PlanesDieta("Mediano", 15000, "https://assets.puzzlefactory.pl/puzzle/266/870/original.jpg"))
+planes.push(new PlanesDieta("Te vas a morir", 25000, "https://i1.sndcdn.com/artworks-000186408657-9f34hk-t500x500.jpg"))
+planes.push(new PlanesDieta("Te vas a virir", 2333000, "https://i1.sndcdn.com/artworks-000186408657-9f34hk-t500x500.jpg"))
+
+
+
+//crear => () {} sacar turno y pedir los diferentes datos para crear el objeto y pushearlo al array
+
+const hacerCards = () => {
+
+    for(plan of planes){
+        console.warn(plan.name)
+
+        let card = document.createElement('div')
+        card.className = "Pedro"
+        card.innerHTML = `
+            <h1>Hola soy el plan ${plan.name}</h1>
+            <img src=${plan.img} class="pedroImg">
+            <div>iefunu8iefef
+            <input/>
+            <p>soy una p</p>
+            </div>
+        `
+        document.getElementById('productos').appendChild(card)
+    }
 
 }
 
-function mensaje() {
-
-    alert("Muchas gracias por venir a estacionamiento Ruperti!");
-
-}
+console.log(planes)
