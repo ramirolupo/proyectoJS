@@ -1,13 +1,11 @@
-const planes = []
-const turnos = []
+const planes = [];
 
 
 class PlanesDieta {
-    constructor(nombre, precio, img){
+    constructor(nombre, precio){
 
         this.name = nombre;
         this.price = precio;
-        this.img = img;
         this.plan = [];
 
         this.addPlato = () => {
@@ -21,19 +19,15 @@ class PlanesDieta {
         }
 
     }
-}
-
-// Crear una clase turnos (nombre, apellido, tipo de turno, dia, horario, mail, direccion  )
-
+};
 
 //globales 
 
 
 //resto del codigo
-planes.push(new PlanesDieta("Basica", 5000, "https://llevatilde.es/imagetexts/4/48/b%C3%A1sico.png"))
-planes.push(new PlanesDieta("Mediano", 15000, "https://assets.puzzlefactory.pl/puzzle/266/870/original.jpg"))
-planes.push(new PlanesDieta("Te vas a morir", 25000, "https://i1.sndcdn.com/artworks-000186408657-9f34hk-t500x500.jpg"))
-planes.push(new PlanesDieta("Te vas a virir", 2333000, "https://i1.sndcdn.com/artworks-000186408657-9f34hk-t500x500.jpg"))
+planes.push(new PlanesDieta("Plan de Entrenamiento", 2000));
+planes.push(new PlanesDieta("Plan Vegetariano", 1000));
+planes.push(new PlanesDieta("Plan Completo", 4000));
 
 
 
@@ -57,6 +51,6 @@ const hacerCards = () => {
         document.getElementById('productos').appendChild(card)
     }
 
-}
+};
 
-console.log(planes)
+console.log(planes);

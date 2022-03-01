@@ -21,7 +21,7 @@
     }
     
     .hero{
-        background-image:url("https://source.unsplash.com/f4RBYsY2hxA/1200x670");
+        background-image:url("https://www.altaircrossfit.com/wp-content/uploads/2018/08/healthy-food-banner-900x444.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         height: 600px;
@@ -79,7 +79,6 @@
     }
     .about-main{
         width: 90%;
-         
         margin: auto;
         display: flex;
         justify-content: space-between;
@@ -126,7 +125,7 @@
     .card-image img{
         width:100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: fill;
     }
     .card-text{
         width:90%;
@@ -278,7 +277,7 @@
     /*medium screens - Laptops*/
     @media screen and (max-width: 1024px) {
         .hero{
-            background-image:url("https://source.unsplash.com/f4RBYsY2hxA/400x320");
+            background-image:url("");
             height: 500px;
             background-position: center;
         }
@@ -297,7 +296,7 @@
     /*Small screens - tablets*/
     @media screen and (max-width: 768px) {
         .hero{
-            background-image:url("https://source.unsplash.com/f4RBYsY2hxA/600x400");
+            background-image:url("https://www.altaircrossfit.com/wp-content/uploads/2018/08/healthy-food-banner-900x444.jpg");
             height: 600px;
             background-position: center;
         }
@@ -328,7 +327,7 @@
     /*Extra small screens - phones*/
     @media screen and (max-width: 480px) {
         .hero{
-            background-image:url("https://source.unsplash.com/f4RBYsY2hxA/600x");
+            background-image:url("https://www.altaircrossfit.com/wp-content/uploads/2018/08/healthy-food-banner-900x444.jpg");
             height: 500px;
             background-position: center;
             
