@@ -52,7 +52,7 @@ const hacerCards = () => {
         let buttonHtml = document.getElementById(plan.id);
 
         buttonHtml.onclick = () => {
-            console.log(`Forma n2 buton: ${plan.id}`)
+            console.log(`Prueba boton: ${plan.id}`)
         };
 
     };
