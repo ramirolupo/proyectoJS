@@ -23,9 +23,9 @@ class PlanesDieta {
 let cardsHtml = document.getElementById("card");
 
 //resto del codigo
-planes.push(new PlanesDieta(15353,"Plan de Entrenamiento", 2000, "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/0f272af6-1c8d-4104-471b-08d655720ca3"));
-planes.push(new PlanesDieta(23535,"Plan Vegetariano", 1000, "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/27e67577-6b6d-49d9-471f-08d655720ca3"));
-planes.push(new PlanesDieta(3333,"Plan Completo", 4000, "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/dbd574b7-4a2a-4228-65bd-08d7dbf48c15"));
+planes.push(new PlanesDieta(1,"Plan de Entrenamiento", 2000, "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/0f272af6-1c8d-4104-471b-08d655720ca3"));
+planes.push(new PlanesDieta(2,"Plan Vegetariano", 1000, "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/27e67577-6b6d-49d9-471f-08d655720ca3"));
+planes.push(new PlanesDieta(3,"Plan Completo", 4000, "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/dbd574b7-4a2a-4228-65bd-08d7dbf48c15"));
 
 
 const hacerCards = () => {
