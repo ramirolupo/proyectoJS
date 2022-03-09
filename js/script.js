@@ -47,9 +47,11 @@ const hacerCards = () => {
                 <button id="${plan.id}" class="w3-btn w3-red w3-margin-top w3-round" style="width:100%" >Elegir Plan</button>
             </div>
         `
-        cardsHtml.appendChild(card);
+        cardsHtml.appendChild(card)
 
-        button.onclick = () => {
+        let buttonHtml = document.getElementById(plan.id);
+
+        buttonHtml.onclick = () => {
             console.log(`Forma n2 buton: ${plan.id}`)
         };
 
