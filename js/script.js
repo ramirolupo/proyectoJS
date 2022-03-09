@@ -58,7 +58,7 @@ const hacerCards = () => {
             <div class="card-text"> 
                 <h4>${plan.name}</h4>
                 <p>$${plan.price}/Mes</p>
-                <button id="${plan.id}" class="w3-btn w3-red w3-margin-top w3-round" style="width:100%" >Unite</button>
+                <button id="${plan.id}" class="w3-btn w3-red w3-margin-top w3-round" style="width:100%" >Elegir Plan</button>
             </div>
         `
         cardsHtml.appendChild(card)
