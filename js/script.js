@@ -44,17 +44,17 @@ const hacerCards = () => {
             <div class="card-text"> 
                 <h4>${plan.name}</h4>
                 <p>$${plan.price}/Mes</p>
-                <button id="${plan.id}" class="w3-btn w3-red w3-margin-top w3-round" style="width:100%" >Elegir Plan</button>
+                <button id="${plan.id}" onclick="triggerBtnEvent(${plan.id})" class="w3-btn w3-red w3-margin-top w3-round" style="width:100%" >Elegir Plan</button>
             </div>
         `
         cardsHtml.appendChild(card)
 
-        let buttonHtml = document.getElementById(plan.id);
-
-        buttonHtml.onclick = () => {
-            console.log(`Prueba boton: ${plan.id}`)
-        };
-
     };
 
+};
+
+function triggerBtnEvent(id){
+
+    console.log(`Prueba boton: ${id}`);
+    
 };
