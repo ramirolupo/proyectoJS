@@ -4,8 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const planes = [];
-const carrito = [];
+let carrito;
 
+let validarCarrito = localStorage.getItem("carrito");
+
+if(validarCarrito == null){
+    carrito = [];
+    console.log(carrito);
+
+}else{
+    carrito = JSON.parse(validarCarrito);
+    console.log(carrito);
+}
 
 class PlanesDieta {
     constructor(id, nombre, precio, imgen){
@@ -33,9 +43,10 @@ const hacerCards = () => {
     cardsHtml.innerHTML = ``
 
     for(plan of planes){
-        console.warn(plan.name)
 
-        let card = document.createElement('div')
+        console.warn(plan.name);
+
+        let card = document.createElement('div');
         card.className = "card-list"
         card.innerHTML = `
             <div class="card-image">
@@ -58,3 +69,33 @@ function triggerBtnEvent(id){
     console.log(`Prueba boton: ${id}`);
     
 };
+
+triggerBtnEvent.addEventListener('click', () => agregarAlCarrito(plan));
+
+const agregarAlCarrito = (item) => {
+
+    console.log(item);
+
+    let aux = carrito.find(Element => Element.id === item.id);
+
+    if(aux === undefined){
+        carrito.push(item);
+        alert("Añadido");
+        guardarStorage();
+    }else{
+        alert("Ya esta añadido el plan");
+    }
+
+}
+
+const vaciarCarrito = () => {
+
+    carrito = [];
+
+    guardarStorage();
+}
+
+const guardarStorage = () => {
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
