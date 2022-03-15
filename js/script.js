@@ -78,7 +78,12 @@ const hacerCards = () => {
 
 function triggerBtnEvent(id) {
   console.log(`Prueba boton: ${id}`);
-  agregarAlCarrito(plan);
+  for (plan of planes) {
+    if (id == plan.id) {
+      agregarAlCarrito(plan);
+      break;
+    }
+  }
 }
 
 const agregarAlCarrito = (item) => {
