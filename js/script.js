@@ -93,10 +93,23 @@ const agregarAlCarrito = (item) => {
 
   if (aux === undefined) {
     carrito.push(item);
-    alert("Añadido");
+    Swal.fire({
+      icon: 'success',
+      title: 'El plan fue añadido correctamente al carrito!',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    });
     guardarStorage();
   } else {
-    alert("Ya esta añadido el plan");
+    Swal.fire({
+      icon: 'error',
+      title: 'Error...',
+      text: 'Éste plan ya se encuentra en el carrito'
+    })
   }
 };
 
