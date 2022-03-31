@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hacerCards();
 });
 
-const planes = [];
+let planes = [];
 let carrito;
 
 let validarCarrito = localStorage.getItem("carrito");
@@ -15,22 +15,21 @@ if (validarCarrito == null) {
   console.log(carrito);
 }
 
-class PlanesDieta {
-  constructor(id, nombre, precio, imgen) {
+function planesdieta (id, nombre, precio, imgen) {
     this.id = id;
     this.name = nombre;
     this.price = precio;
-    this.img = imgen;
+    this.img = imgen
   }
-}
+
 
 //globales
 
 let cardsHtml = document.getElementById("card");
 
 //resto del codigo
-planes.push(
-  new PlanesDieta(
+/*planes.push(
+  new planesdieta(
     1,
     "Plan de Entrenamiento",
     2000,
@@ -38,7 +37,7 @@ planes.push(
   )
 );
 planes.push(
-  new PlanesDieta(
+  new planesdieta(
     2,
     "Plan Vegetariano",
     1000,
@@ -46,13 +45,21 @@ planes.push(
   )
 );
 planes.push(
-  new PlanesDieta(
+  new planesdieta(
     3,
     "Plan Completo",
     4000,
     "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/dbd574b7-4a2a-4228-65bd-08d7dbf48c15"
   )
-);
+);*/
+
+fetch('data.json')
+.then((resp) => resp.json())
+.then((data) => data.forEach((planesdieta) => 
+  planes.push(new planesdieta (planesdieta.id, planesdieta.name, planesdieta.price, planesdieta.img))
+));
+console.log(planes);
+
 
 const hacerCards = () => {
   cardsHtml.innerHTML = ``;
