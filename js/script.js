@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hacerCards();
 });
 
-let planes = [];
+const planes = [];
 let carrito;
 
 let validarCarrito = localStorage.getItem("carrito");
@@ -15,21 +15,22 @@ if (validarCarrito == null) {
   console.log(carrito);
 }
 
-function planesdieta (id, nombre, precio, imgen) {
+class PlanesDieta {
+  constructor(id, nombre, precio, imgen) {
     this.id = id;
     this.name = nombre;
     this.price = precio;
-    this.img = imgen
+    this.img = imgen;
   }
-
+}
 
 //globales
 
 let cardsHtml = document.getElementById("card");
 
 //resto del codigo
-/*planes.push(
-  new planesdieta(
+planes.push(
+  new PlanesDieta(
     1,
     "Plan de Entrenamiento",
     2000,
@@ -37,7 +38,7 @@ let cardsHtml = document.getElementById("card");
   )
 );
 planes.push(
-  new planesdieta(
+  new PlanesDieta(
     2,
     "Plan Vegetariano",
     1000,
@@ -45,21 +46,13 @@ planes.push(
   )
 );
 planes.push(
-  new planesdieta(
+  new PlanesDieta(
     3,
     "Plan Completo",
     4000,
     "https://api.nutricionistasofiadiloreto.com.ar/api/tratamientos/imagen/dbd574b7-4a2a-4228-65bd-08d7dbf48c15"
   )
-);*/
-
-fetch('data.json')
-.then((resp) => resp.json())
-.then((data) => data.forEach((planesdieta) => 
-  planes.push(new planesdieta (planesdieta.id, planesdieta.name, planesdieta.price, planesdieta.img))
-));
-console.log(planes);
-
+);
 
 const hacerCards = () => {
   cardsHtml.innerHTML = ``;
@@ -129,3 +122,35 @@ const vaciarCarrito = () => {
 const guardarStorage = () => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 };
+
+async function generarLinkDePago() {
+  const productsToMP = carrito.map((element) => {
+    let nuevoElemento = {
+      title: element.name,
+      description: "",
+      picture_url: element.img,
+      category_id: element.id,
+      quantity: 1,
+      currency_id: "ARS",
+      unit_price: Number(element.price),
+    };
+    return nuevoElemento;
+  });
+  const response = await fetch(
+    "https://api.mercadopago.com/checkout/preferences",
+    {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer TEST-680675151110839-052307-64069089337ab3707ea2f547622a1b6a-60191006",
+      },
+      body: JSON.stringify({
+        items: productsToMP,
+      }),
+    }
+  );
+  console.log(response)
+  const data = await response.json();
+  console.log(data)
+  window.open(data.init_point, "_blank");
+}
