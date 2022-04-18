@@ -15,6 +15,8 @@ if (validarCarrito == null) {
   console.log(carrito);
 }
 
+//clase planes
+
 class PlanesDieta {
   constructor(id, nombre, precio, imgen) {
     this.id = id;
@@ -28,7 +30,8 @@ class PlanesDieta {
 
 let cardsHtml = document.getElementById("card");
 
-//resto del codigo
+//planes disponibles
+
 planes.push(
   new PlanesDieta(
     1,
@@ -54,6 +57,8 @@ planes.push(
   )
 );
 
+//cards html
+
 const hacerCards = () => {
   cardsHtml.innerHTML = ``;
 
@@ -76,6 +81,8 @@ const hacerCards = () => {
   }
 };
 
+//agregar planes al carrito
+
 function triggerBtnEvent(id) {
   console.log(`Prueba boton: ${id}`);
   for (plan of planes) {
@@ -87,9 +94,12 @@ function triggerBtnEvent(id) {
 }
 
 const agregarAlCarrito = (item) => {
-  console.log(item);
 
+  console.log(item);
+  
   let aux = carrito.find((Element) => Element.id === item.id);
+
+  //alertas
 
   if (aux === undefined) {
     carrito.push(item);
@@ -113,6 +123,8 @@ const agregarAlCarrito = (item) => {
   }
 };
 
+//función vaciar carrito
+
 const vaciarCarrito = () => {
   carrito = [];
 
@@ -122,6 +134,8 @@ const vaciarCarrito = () => {
 const guardarStorage = () => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 };
+
+//link de pago
 
 async function generarLinkDePago() {
   const productsToMP = carrito.map((element) => {
